@@ -9,16 +9,16 @@
 
 namespace ghostlock::target {
     namespace address {
-        inline constexpr std::uintptr_t kImageTextBase = 0xffffffc080000000ULL;
+        inline constexpr std::uintptr_t kImageTextBase = 0xffffffc010080000ULL;
         inline constexpr std::uintptr_t kMtkVirtualBase = 0xffffffc000000000ULL;
-        inline constexpr std::uintptr_t kPageOffset = 0xffffff8000000000ULL;
+        inline constexpr std::uintptr_t kPageOffset = 0xffffffc000000000ULL;
         inline constexpr std::uintptr_t kPhysicalOffset = 0x80000000ULL;
         inline constexpr std::uintptr_t kKernelSnitchIdentityStart =
-                0xffffff8000000000ULL;
+                0xffffffc000000000ULL;
         inline constexpr std::uintptr_t kKernelSnitchIdentityEnd =
-                0xffffff8c00000000ULL;
-        inline constexpr std::uintptr_t kDirectMapBase = 0xffffff8000000000ULL;
-        inline constexpr std::uintptr_t kDirectMapEnd = 0xffffff9000000000ULL;
+                0xffffffc400000000ULL;
+        inline constexpr std::uintptr_t kDirectMapBase = 0xffffffc000000000ULL;
+        inline constexpr std::uintptr_t kDirectMapEnd = 0xffffffd000000000ULL;
         inline constexpr std::uintptr_t kVmemmapStart = 0xfffffffe00000000ULL;
     } // namespace address
 
@@ -75,7 +75,7 @@ namespace ghostlock::target {
     static_assert(sizeof(KernelAddress<ImageAddressDomain>) == sizeof(std::uintptr_t));
     static_assert(alignof(KernelAddress<ImageAddressDomain>) == alignof(std::uintptr_t));
 
-    static_assert(address::kImageTextBase == 0xffffffc080000000ULL);
+    static_assert(address::kImageTextBase == 0xffffffc010080000ULL);
     static_assert(address::kMtkVirtualBase == 0xffffffc000000000ULL);
     static_assert(address::kPageOffset == address::kDirectMapBase);
     static_assert(address::kKernelSnitchIdentityStart == address::kDirectMapBase);
